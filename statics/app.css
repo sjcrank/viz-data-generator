@@ -1,0 +1,48 @@
+// Border-Box
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+}
+
+// iOS text size adjust
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+// remove default margins
+body, p, input, button {
+    margin: 0;
+}
+
+// IE SVG overflow bug
+svg:not(:root) {
+    overflow: hidden;
+}
+
+html {
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #505050;
+    background-color: #e8e8e8;
+    min-height: 100%;
+}
+
+div {
+    position: relative;
+}
+
+#app {
+    position: inherit;
+}
