@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import StyleGuide from './styleGuide';
 
+import FixedWidthContainer from './fixedWidthContainer';
+
 export default class Header extends React.Component {
     render() {
         return (
             <div className={css(styles.header)}>
-                <div className={css(styles.headerContent)}>
-                    <span className={css(styles.title)}>Viz Data Generator</span>
-                    <a className={css(styles.link)} href='https://github.com/sjcrank/viz-data-generator'>source code</a>
-                </div>
+                <FixedWidthContainer>
+                    <div className={css(styles.headerContent)}>
+                        <span className={css(styles.title)}>Viz Data Generator</span>
+                        <a className={css(styles.link)} href='https://github.com/sjcrank/viz-data-generator'>source code</a>
+                    </div>
+                </FixedWidthContainer>
             </div>
         );
     }
@@ -21,8 +25,6 @@ const styles = StyleSheet.create({
         backgroundColor: StyleGuide.colorBlue,
     },
     headerContent: {
-        maxWidth: '1100px',
-        margin: '0 auto',
         padding: '9px 12px',
     },
     title: {
