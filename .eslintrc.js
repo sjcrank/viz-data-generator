@@ -1,12 +1,13 @@
 module.exports = {
-    "extends": "airbnb",
+    "extends": ["airbnb", "plugin:ava/recommended"],
     "env": {
         "browser": true
     },
     "plugins": [
         "react",
         "jsx-a11y",
-        "import"
+        "import",
+        "ava"
     ],
     "rules": {
         "indent": ["error", 4],

@@ -5,25 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 
-import Header from './header';
-import FixedWidthContainer from './fixedWidthContainer';
-
-const App = () => (
-    <div>
-        <Header/>
-        <FixedWidthContainer/>
-    </div>
-);
+import App from './app';
 
 ReactDOM.render(<App/>, document.getElementById('app'));
-
-/*
-                    <Row align='center'><GenerateDataBtn/></Row>
-                    <Row>
-                        <Cell><ConfigPane/></Cell>
-                        <Cell fill='both'><DataPane/></Cell>
-                    </Row>
-                    <Row>
-                        <Cell fill='both'><VisualizationPane/></Cell>
-                    </Row>
-*/
