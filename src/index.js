@@ -1,24 +1,19 @@
-require("file?name=[name].[ext]!../statics/index.html");
-require("file?name=[name].[ext]!../statics/app.css");
+import 'file?name=[name].[ext]!../statics/index.html';
+import 'file?name=[name].[ext]!../statics/app.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "babel-polyfill";
+import 'babel-polyfill';
 
 import Header from './header';
 import FixedWidthContainer from './fixedWidthContainer';
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Header/>
-                <FixedWidthContainer>
-                </FixedWidthContainer>
-            </div>
-        );
-    }
-}
+const App = () => (
+    <div>
+        <Header/>
+        <FixedWidthContainer/>
+    </div>
+);
 
 ReactDOM.render(<App/>, document.getElementById('app'));
 

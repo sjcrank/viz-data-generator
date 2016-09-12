@@ -1,4 +1,4 @@
-export default {
+const StyleGuide = {
     // colors
     colorBlue: '#00b5ea',
     // font sizes
@@ -18,4 +18,6 @@ export default {
     weight2: '700',
     weight3: '400',
     weight4: '300',
-}
+};
+
+export default StyleGuide;

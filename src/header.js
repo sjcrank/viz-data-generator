@@ -1,26 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import StyleGuide from './styleGuide';
 
 import FixedWidthContainer from './fixedWidthContainer';
 
-export default class Header extends React.Component {
-    render() {
-        return (
-            <div className={css(styles.header)}>
-                <FixedWidthContainer>
-                    <div className={css(styles.headerContent)}>
-                        <span className={css(styles.title)}>Viz Data Generator</span>
-                        <a className={css(styles.link)} href='https://github.com/sjcrank/viz-data-generator'>source code</a>
-                    </div>
-                </FixedWidthContainer>
-            </div>
-        );
-    }
-}
-
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
     header: {
         backgroundColor: StyleGuide.colorBlue,
     },
@@ -44,6 +28,19 @@ const styles = StyleSheet.create({
         ':hover': {
             textDecoration: 'underline',
             color: 'rgba(255,255,255,0.8)',
-        }
+        },
     },
 });
+
+const Header = () => (
+    <div className={css(Styles.header)}>
+        <FixedWidthContainer>
+            <div className={css(Styles.headerContent)}>
+                <span className={css(Styles.title)}>Viz Data Generator</span>
+                <a className={css(Styles.link)} href='https://github.com/sjcrank/viz-data-generator'>source code</a>
+            </div>
+        </FixedWidthContainer>
+    </div>
+);
+
+export default Header;

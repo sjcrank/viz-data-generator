@@ -5,7 +5,8 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "clean": "rm -rf bin",
-    "watch": "webpack-dev-server --inline --hot --content-base bin"
+    "lint": "eslint src/*.js",
+    "watch": "webpack-dev-server --inline --hot --devtool source-map --content-base bin"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,11 @@
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0",
     "file-loader": "^0.9.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
