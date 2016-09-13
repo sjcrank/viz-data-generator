@@ -1,6 +1,7 @@
 const StyleGuide = {
     // colors
     colorBlue: '#00b5ea',
+    colorGreen: '#00d458',
     // font sizes
     fontSize1: '20px',
     fontSize2: '16px',

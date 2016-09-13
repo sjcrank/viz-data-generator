@@ -10,6 +10,14 @@ module.exports = {
         "ava"
     ],
     "rules": {
+        "max-len": ["off"],
+        "keyword-spacing": ["error", {
+            "after": false,
+            "overrides": {
+                "import": { "after":true },
+                "from": { "after":true }
+            }
+        }],
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/require-extension": ["off"],
