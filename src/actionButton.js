@@ -41,8 +41,8 @@ const Styles = StyleSheet.create({
     },
     buttonActive: {
         color: '#ffffff',
-        borderLeft: 'none',
-        borderRight: 'none',
+        borderLeft: normalBorder,
+        borderRight: normalBorder,
         borderBottom: normalBorder,
         borderTop: normalBorder,
         backgroundColor: StyleGuide.colorGreen,
@@ -57,13 +57,32 @@ const Styles = StyleSheet.create({
     },
 });
 
-const ActionButton = props => (
-    <button className={`${css(Styles.base)} ${css(props.active ? Styles.buttonActive : Styles.button)}`}>{props.text}</button>
-);
+class ActionButton extends React.Component {
+    constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        if(this.props.onAction) { this.props.onAction(); }
+    }
+
+    render() {
+        return (
+            <button
+                className={`${css(Styles.base)} ${css(this.props.active ? Styles.buttonActive : Styles.button)}`}
+                onClick={this.handleClick}
+            >
+                {this.props.text}
+            </button>
+        );
+    }
+}
 
 ActionButton.propTypes = {
     text: React.PropTypes.string,
     active: React.PropTypes.bool,
+    onAction: React.PropTypes.func,
 };
 
 export default ActionButton;

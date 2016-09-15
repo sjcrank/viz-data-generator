@@ -1,12 +1,15 @@
 import React from 'react';
-
 import { StyleSheet, css } from 'aphrodite/no-important';
+import { observer } from 'mobx-react';
+
 import Header from './header';
 import FixedWidthContainer from './fixedWidthContainer';
 import ActionButton from './actionButton';
 import ConfigTile from './configTile';
 import DataTile from './dataTile';
 import VizTile from './vizTile';
+import ViewStore from './viewStore';
+import GenDataAction from './genDataAction';
 
 const Styles = StyleSheet.create({
     actionRowLayout: {
@@ -36,12 +39,12 @@ const Styles = StyleSheet.create({
     },
 });
 
-const App = () => (
+const App = observer(() => (
     <div>
         <Header/>
         <FixedWidthContainer>
             <div className={css(Styles.actionRowLayout)}>
-                <ActionButton text='Generate Data' active/>
+                <ActionButton text='Generate Data' active={ViewStore.configIsDirty} onAction={GenDataAction.exec}/>
             </div>
             <div className={css(Styles.configDataRowLayout)}>
                 <ConfigTile/>
@@ -54,6 +57,7 @@ const App = () => (
             </div>
         </FixedWidthContainer>
     </div>
-);
+));
+
 
 export default App;

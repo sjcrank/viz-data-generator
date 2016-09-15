@@ -8,6 +8,7 @@ import ActionButton from './actionButton';
 import ConfigTile from './configTile';
 import DataTile from './dataTile';
 import VizTile from './vizTile';
+import ViewStore from './viewStore';
 
 test.beforeEach('disable style injection', () => {
     StyleSheetTestUtils.suppressStyleInjection();
@@ -26,3 +27,14 @@ test('contains key children', (t) => {
     t.true(wrapper.find(VizTile).length === 1);
 });
 
+test('button is active if config is dirty', (t) => {
+    ViewStore.configIsDirty = true;
+    const wrapper = shallow(<App/>);
+    t.is(wrapper.find(ActionButton).prop('active'), true);
+});
+
+test('button is inactive if config is clean', (t) => {
+    ViewStore.configIsDirty = false;
+    const wrapper = shallow(<App/>);
+    t.is(wrapper.find(ActionButton).prop('active'), false);
+});

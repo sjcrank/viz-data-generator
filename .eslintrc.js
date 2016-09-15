@@ -3,6 +3,7 @@ module.exports = {
     "env": {
         "browser": true
     },
+    "parser": "babel-eslint",
     "plugins": [
         "react",
         "jsx-a11y",
@@ -14,12 +15,14 @@ module.exports = {
         "keyword-spacing": ["error", {
             "after": false,
             "overrides": {
+                "return": { "after":true },
                 "import": { "after":true },
                 "from": { "after":true }
             }
         }],
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
         "react/require-extension": ["off"],
         "quotes": ["error", "single"],
         "jsx-quotes": ["error", "prefer-single"],
