@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { StyleSheet, css } from 'aphrodite/no-important';
 
 const Styles = StyleSheet.create({
@@ -11,7 +12,7 @@ const Styles = StyleSheet.create({
 });
 
 const Tile = props => (
-    <div className={css(Styles.tile)}>
+    <div className={classNames(css(Styles.tile), props.className)}>
         {props.children}
     </div>
 );
@@ -21,6 +22,7 @@ Tile.propTypes = {
         React.PropTypes.arrayOf(React.PropTypes.node),
         React.PropTypes.node,
     ]),
+    className: React.PropTypes.string,
 };
 
 export default Tile;

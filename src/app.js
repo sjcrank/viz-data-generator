@@ -4,31 +4,54 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import Header from './header';
 import FixedWidthContainer from './fixedWidthContainer';
 import ActionButton from './actionButton';
-import Tile from './tile';
-import TileTitle from './tileTitle';
+import ConfigTile from './configTile';
+import DataTile from './dataTile';
+import VizTile from './vizTile';
 
 const Styles = StyleSheet.create({
-    actionBar: {
-        padding: '24px 0',
+    actionRowLayout: {
+        margin: '24px 0',
         textAlign: 'center',
     },
+    configDataRowLayout: {
+        marginBottom: '24px',
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        alignItems: 'stretch',
+    },
+    dataCellLayout: {
+        marginLeft: '24px',
+        flexGrow: 1,
+        flexShrink: 1,
+    },
+    dataTileLayout: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+    },
+    vizRowLayout: {
+        marginBottom: '24px',
+    },
 });
-
-const tiledata = [];
-for(let i = 0; i < 50; i += 1) {
-    tiledata.push(<p key={i}>row {i}</p>);
-}
 
 const App = () => (
     <div>
         <Header/>
         <FixedWidthContainer>
-            <div className={css(Styles.actionBar)}>
+            <div className={css(Styles.actionRowLayout)}>
                 <ActionButton text='Generate Data' active/>
             </div>
-            <Tile><TileTitle text='Configuration'/><p>this is the text inside the first tile which has a form for configuration</p></Tile>
-            <Tile><TileTitle text='Generated Data'/>{tiledata}</Tile>
-            <Tile><TileTitle text='Data Visualized'/></Tile>
+            <div className={css(Styles.configDataRowLayout)}>
+                <ConfigTile/>
+                <div className={css(Styles.dataCellLayout)}>
+                    <DataTile className={css(Styles.dataTileLayout)}/>
+                </div>
+            </div>
+            <div className={css(Styles.vizRowLayout)}>
+                <VizTile/>
+            </div>
         </FixedWidthContainer>
     </div>
 );

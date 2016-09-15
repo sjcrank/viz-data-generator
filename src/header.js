@@ -9,21 +9,22 @@ const Styles = StyleSheet.create({
         backgroundColor: StyleGuide.colorBlue,
     },
     headerContent: {
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        alignItems: 'baseline',
         padding: '9px 12px',
     },
     title: {
+        flex: 1,
         color: '#ffffff',
         fontSize: StyleGuide.fontSize2,
-        lineHeight: StyleGuide.lineHeight2,
         letterSpacing: '1px',
     },
     link: {
         color: 'rgba(255,255,255,0.7)',
         fontSize: StyleGuide.fontSize3,
-        lineHeight: StyleGuide.lineHeight2,
         fontWeight: StyleGuide.weight4,
         letterSpacing: '1px',
-        float: 'right',
         textDecoration: 'none',
         ':hover': {
             textDecoration: 'underline',
@@ -34,11 +35,9 @@ const Styles = StyleSheet.create({
 
 const Header = () => (
     <div className={css(Styles.header)}>
-        <FixedWidthContainer>
-            <div className={css(Styles.headerContent)}>
-                <span className={css(Styles.title)}>Viz Data Generator</span>
-                <a className={css(Styles.link)} href='https://github.com/sjcrank/viz-data-generator'>source code</a>
-            </div>
+        <FixedWidthContainer className={css(Styles.headerContent)}>
+            <span className={css(Styles.title)}>Viz Data Generator</span>
+            <a className={css(Styles.link)} href='https://github.com/sjcrank/viz-data-generator'>source code</a>
         </FixedWidthContainer>
     </div>
 );
