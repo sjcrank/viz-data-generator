@@ -29,6 +29,7 @@ module.exports = {
         "react/jsx-filename-extension": ["off"],
         "react/jsx-space-before-closing": ["off"],
         "import/no-extraneous-dependencies": ["off"],
+        "class-methods-use-this": ["off"],
         "import/no-unresolved": ["off"]
     }
 };
