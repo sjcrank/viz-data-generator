@@ -2,9 +2,6 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import StyleGuide from './styleGuide';
 
-const normalBorder = `2px solid ${StyleGuide.colorGreen}`;
-const darkBorder = '2px solid #01bd4f';
-
 const Styles = StyleSheet.create({
     base: {
         padding: '12px 18px',
@@ -16,43 +13,38 @@ const Styles = StyleSheet.create({
         },
     },
     button: {
-        color: StyleGuide.colorGreen,
-        border: normalBorder,
-        backgroundColor: '#ffffff',
-        fontWeight: StyleGuide.weight3,
+        color: '#ffffff',
+        backgroundColor: '#a0a0a0',
+        borderLeft: '2px solid #a0a0a0',
+        borderRight: '2px solid #a0a0a0',
+        borderTop: '2px solid #a0a0a0',
+        borderBottom: '2px solid #a0a0a0',
+        fontWeight: StyleGuide.weight4,
         ':hover': {
             color: '#ffffff',
-            backgroundColor: StyleGuide.colorGreen,
-            borderLeft: normalBorder,
-            borderRight: normalBorder,
-            borderTop: normalBorder,
-            borderBottom: darkBorder,
-            fontWeight: StyleGuide.weight4,
+            borderTop: '2px solid #a0a0a0',
+            borderBottom: '2px solid #808080',
         },
         ':active': {
             color: '#ffffff',
-            backgroundColor: StyleGuide.colorGreen,
-            borderLeft: normalBorder,
-            borderRight: normalBorder,
-            borderTop: darkBorder,
-            borderBottom: normalBorder,
-            fontWeight: StyleGuide.weight4,
+            borderTop: '2px solid #808080',
+            borderBottom: '2px solid #a0a0a0',
         },
     },
     buttonActive: {
         color: '#ffffff',
-        borderLeft: normalBorder,
-        borderRight: normalBorder,
-        borderBottom: normalBorder,
-        borderTop: normalBorder,
+        borderLeft: `2px solid ${StyleGuide.colorGreen}`,
+        borderRight: `2px solid ${StyleGuide.colorGreen}`,
+        borderBottom: `2px solid ${StyleGuide.colorGreen}`,
+        borderTop: `2px solid ${StyleGuide.colorGreen}`,
         backgroundColor: StyleGuide.colorGreen,
         fontWeight: StyleGuide.weight4,
         ':hover': {
-            borderBottom: darkBorder,
+            borderBottom: '2px solid #01bd4f',
         },
         ':active': {
-            borderTop: darkBorder,
-            borderBottom: normalBorder,
+            borderTop: '2px solid #01bd4f',
+            borderBottom: `2px solid ${StyleGuide.colorGreen}`,
         },
     },
 });
