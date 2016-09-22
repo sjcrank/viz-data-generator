@@ -11,7 +11,9 @@ function isIntegral(n) {
 }
 
 const AppStore = {
+
     // generated data
+    @observable generatedData: [],
 
     // config spec
     configSpec: {
@@ -24,7 +26,7 @@ const AppStore = {
         @observable xTrigVar2: 1,
         @observable xTrigVar3: 0,
 
-        @observable yDataPts: 1,
+        @observable yDataPts: 10,
         @observable yDataShape: 'linear',
         @observable yLinearVar1: 1,
         @observable yLinearVar2: 0,

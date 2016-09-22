@@ -1,8 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import { StyleSheet, css } from 'aphrodite/no-important';
+import { observer } from 'mobx-react';
+import StyleGuide from './styleGuide';
 import Tile from './tile';
 import TileTitle from './tileTitle';
+import AppStore from './appStore';
 
 const Styles = StyleSheet.create({
     tileLayout: {
@@ -16,27 +19,35 @@ const Styles = StyleSheet.create({
     },
     dataContentLayout: {
         position: 'absolute',
-        top: 0,
+        top: '18px',
         left: 0,
         bottom: 0,
         right: 0,
         overflow: 'auto',
     },
+    dataLine: {
+        whiteSpace: 'nowrap',
+        fontFamily: 'monospace',
+        fontSize: StyleGuide.fontSize5,
+        color: '#808080',
+    },
 });
 
-const tiledata = [];
-for(let i = 0; i < 50; i += 1) {
-    tiledata.push(<li key={i}>row {i}</li>);
-}
-
-const DataTile = props => (
-    <Tile className={classNames(css(Styles.tileLayout), props.className)}>
-        <TileTitle text='Generated Data'/>
-        <div className={css(Styles.dataCellLayout)}>
-            <ul className={css(Styles.dataContentLayout)}>{tiledata}</ul>
-        </div>
-    </Tile>
-);
+const DataTile = observer((props) => {
+    const rows = AppStore.generatedData.map((row, i) => <div key={i} className={css(Styles.dataLine)}>&nbsp;&nbsp;{`[ ${row.join(' ')} ]`}</div>);
+    return (
+        <Tile className={classNames(css(Styles.tileLayout), props.className)}>
+            <TileTitle text='Generated Data'/>
+            <div className={css(Styles.dataCellLayout)}>
+                <div className={css(Styles.dataContentLayout)}>
+                    <div className={css(Styles.dataLine)}>[</div>
+                    {rows}
+                    <div className={css(Styles.dataLine)}>]</div>
+                </div>
+            </div>
+        </Tile>
+    );
+});
 
 DataTile.propTypes = {
     className: React.PropTypes.string,

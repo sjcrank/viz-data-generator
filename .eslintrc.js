@@ -17,7 +17,8 @@ module.exports = {
             "overrides": {
                 "return": { "after":true },
                 "import": { "after":true },
-                "from": { "after":true }
+                "from": { "after":true },
+                "else": { "after":true }
             }
         }],
         "indent": ["error", 4],
@@ -30,6 +31,8 @@ module.exports = {
         "react/jsx-space-before-closing": ["off"],
         "import/no-extraneous-dependencies": ["off"],
         "class-methods-use-this": ["off"],
-        "import/no-unresolved": ["off"]
+        "import/no-unresolved": ["off"],
+        "no-mixed-operators": ["off"],
+        "no-else-return": ["off"]
     }
 };
