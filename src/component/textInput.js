@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { StyleSheet, css } from 'aphrodite/no-important';
-import StyleGuide from './styleGuide';
+import StyleGuide from '../util/styleGuide';
 
 const Styles = StyleSheet.create({
     container: {

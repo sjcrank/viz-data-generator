@@ -1,12 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import { action } from 'mobx';
-import Tile from './tile';
-import TileTitle from './tileTitle';
-import AppStore from './appStore';
-import ViewStore from './viewStore';
-import FormTopic from './formTopic';
-import TextInput from './textInput';
+import Tile from './component/tile';
+import TileTitle from './component/tileTitle';
+import AppStore from './store/appStore';
+import ViewStore from './store/viewStore';
+import FormTopic from './component/formTopic';
+import TextInput from './component/textInput';
 
 @observer
 class ConfigTile extends React.Component {

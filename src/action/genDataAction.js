@@ -1,6 +1,6 @@
 import { action } from 'mobx';
-import ViewStore from './viewStore';
-import AppStore from './appStore';
+import ViewStore from '../store/viewStore';
+import AppStore from '../store/appStore';
 
 const trigFunctions = {
     sin(n) { return Math.sin(n); },

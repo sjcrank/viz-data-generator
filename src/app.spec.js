@@ -3,12 +3,12 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { StyleSheetTestUtils } from 'aphrodite';
 import App from './app';
-import Header from './header';
-import ActionButton from './actionButton';
+import Header from './component/header';
+import ActionButton from './component/actionButton';
 import ConfigTile from './configTile';
 import DataTile from './dataTile';
 import VizTile from './vizTile';
-import ViewStore from './viewStore';
+import ViewStore from './store/viewStore';
 
 test.beforeEach('disable style injection', () => {
     StyleSheetTestUtils.suppressStyleInjection();

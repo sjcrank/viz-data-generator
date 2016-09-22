@@ -1,6 +1,6 @@
 import test from 'ava';
-import ViewStore from './viewStore';
-import GenDataAction from './genDataAction';
+import ViewStore from '../store/viewStore';
+import GenDataAction from '../action/genDataAction';
 
 test.beforeEach('init view store', () => {
     ViewStore.configIsDirty = true;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Tile from './tile';
-import TileTitle from './tileTitle';
+import Tile from './component/tile';
+import TileTitle from './component/tileTitle';
 
 const VizTile = props => (
     <Tile className={props.className}>

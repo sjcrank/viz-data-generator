@@ -2,10 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { observer } from 'mobx-react';
-import StyleGuide from './styleGuide';
-import Tile from './tile';
-import TileTitle from './tileTitle';
-import AppStore from './appStore';
+import StyleGuide from './util/styleGuide';
+import Tile from './component/tile';
+import TileTitle from './component/tileTitle';
+import AppStore from './store/appStore';
 
 const Styles = StyleSheet.create({
     tileLayout: {

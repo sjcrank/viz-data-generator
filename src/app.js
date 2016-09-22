@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { observer } from 'mobx-react';
 
-import Header from './header';
-import FixedWidthContainer from './fixedWidthContainer';
-import ActionButton from './actionButton';
+import Header from './component/header';
+import FixedWidthContainer from './component/fixedWidthContainer';
+import ActionButton from './component/actionButton';
 import ConfigTile from './configTile';
 import DataTile from './dataTile';
 import VizTile from './vizTile';
-import ViewStore from './viewStore';
-import GenDataAction from './genDataAction';
+import ViewStore from './store/viewStore';
+import GenDataAction from './action/genDataAction';
 
 const Styles = StyleSheet.create({
     actionRowLayout: {
